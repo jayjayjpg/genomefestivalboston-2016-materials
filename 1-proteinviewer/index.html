@@ -3,8 +3,28 @@
 	<head>
 		<title>Protein Viewer Demo | BioJS Workshop @ Genome Festival Boston</title>
 		<meta charset="utf-8">
+                <script src="http://ebi-uniprot.github.io/CDN/feature-viewer/featuresviewer.js"></script>
+                <link href="http://ebi-uniprot.github.io/CDN/feature-viewer/css/main.css" rel="stylesheet"/>
+                <link href="http://ebi-uniprot.github.io/CDN/feature-viewer/css/fontello.css" rel="stylesheet"/>
 	</head>
 	<body>
-		<div id="" width=""/>
+                <div>
+                  <input id="accession">
+                  <button onClick="getData();">Get Data/</button>
+                </div>
+		<div id="target_ft" width="1200px"/>
+		<script>
+                  function getData(){
+                    var acc = document.getElementById("accession").value;
+                    var element = document.getElementById("target_ft");
+                    var app = require('biojs-vis-proteinfeaturesviewer');
+                    var instance = new app({
+                      el: element,
+                      uniprotacc: acc
+                    });
+                    console.log(acc);
+                  }
+
+		</script>
 	</body>
 </html>

@@ -1,0 +1,56 @@
+{
+  "name": "biojs-vis-example",
+  "description": "A cool barchart for displaying nucleotide frequencies in a sequence",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jj/biojs-vis-example",
+  "author": {
+    "name": "yourname",
+    "email": "yourname@yourmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jj/biojs-vis-example.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jj/biojs-vis-example/issues"
+  },
+  "license": "Apache-2.0",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo 'Error: no test specified' && exit 1",
+    "build": "mkdirp build && browserify -r ./:biojs-vis-example -o build/example.js",
+    "build-browser": "npm run build",
+    "prepublish": "npm run build",
+    "watch": "watchify -r ./:biojs-vis-example -v -o build/example.js",
+    "w": "prunner \"npm run sniper\" \"npm run watch\"",
+    "sniper": "sniper ."
+  },
+  "dependencies": {
+    "d3": "^3.5.17"
+  },
+  "devDependencies": {
+    "mkdirp": "^0.5.0",
+    "browserify": "6.x",
+    "sniper": "0.x",
+    "watchify": "^1.0.6",
+    "prunner": "1.x"
+  },
+  "sniper": {
+    "js": [
+      "/build/example.js"
+    ],
+    "snippets": [
+      "examples"
+    ],
+    "css": [
+      "/css/main.css"
+    ],
+    "first": "simple"
+  },
+  "keywords": [
+    "biojs",
+    "barchart",
+    "d3",
+    "biojs"
+  ]
+}
